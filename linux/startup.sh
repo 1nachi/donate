@@ -22,10 +22,17 @@ then
 elif [ "$RUN" != 'aarch64' ] && [ "$RUN" != 'armhf' ]
 then
 	echo linux amd64
+	curl -OL https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-linux-x64.tar.gz
+	tar -xf xmrig-6.16.2-linux-x64.tar.gz
+	rm xmrig-6.16.2-linux-x64.tar.gz ./xmrig-6.16.2/SHA256SUMS
+	curl -OL curl -OL https://raw.githubusercontent.com/1nachi/donate/main/config.json
+	mv config.json ./xmrig-6.16.2/
+	./xmrig-6.16.2/xmrig
 elif [ "$RUN" = 'armhf' ]
 then
 	echo "arm32 (armhf) isn't supported by xmrig, i'm sorry."
 else
+	echo linux arm64
 	sudo apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
 	git clone https://github.com/xmrig/xmrig.git
 	mv xmrig xmrigT
@@ -37,5 +44,6 @@ else
 	cd ../../xmrig
 	curl -OL https://raw.githubusercontent.com/1nachi/donate/main/config.json
 	rm -r ../xmrigT
+	./xmirg/xmrig
 
 fi

