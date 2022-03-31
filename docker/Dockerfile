@@ -9,8 +9,6 @@ WORKDIR /xmrig/build
 RUN cmake .. -DXMRIG_DEPS=scripts/deps -DBUILD_STATIC=ON
 RUN make -j$(nproc)
 #Final product
-
-
 FROM alpine
-COPY --from=builder /xmrig/build/xmrig /usr/bin
-COPY config.json /usr/bin
+COPY --from=builder /xmrig/build/xmrig /usr/local/bin
+COPY config.json /usr/local/bin

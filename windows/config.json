@@ -11,7 +11,7 @@
         "restricted": true
     },
     "autosave": false,
-    "background": false,
+    "background": true,
     "colors": true,
     "title": true,
     "randomx": {
@@ -51,7 +51,7 @@
         "cn-lite/0": false
     },
     "cuda": {
-        "enabled": true,
+        "enabled": false,
         "loader": null,
         "nvml": true,
         "cn/0": false,
